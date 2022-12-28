@@ -62,7 +62,20 @@ const SingleCoinInfo = (props) => {
       point: {
         radius: 1
       }
-    }
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: `${mode === 'light' ? '#685f68' : '#9f9d99'}`
+        }
+      },
+      y: {
+        ticks: {
+          color: `${mode === 'light' ? '#685f68' : '#9f9d99'}`
+        }
+      },
+      
+  }
   }
 
   const prices = [];
@@ -140,7 +153,7 @@ const SingleCoinInfo = (props) => {
               </ToggleButton>
               <ToggleButton value="market_caps" sx={{ padding: '0.25rem 1rem', borderColor: 'text.secondary' }}>
                 Market Cap
-              </ToggleButton>=
+              </ToggleButton>
             </ToggleButtonGroup>
 
             <ToggleButtonGroup

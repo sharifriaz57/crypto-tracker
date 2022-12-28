@@ -13,7 +13,6 @@ const SingleCoin = () => {
   const getCoinsByMarketCap = async () => {
     setLoading(true)
     const { data } = await axios.get(SingleCoinAPI(id));
-    console.log(data);
     setCoinInfo(data);
     setLoading(false);
   }

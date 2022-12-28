@@ -6,18 +6,20 @@ export const ColorModeContextAPI = React.createContext({ toggleColorMode: () => 
 export const CurrentCurrencyContextAPI = React.createContext();
 
 const ColorModeContext = ({ children }) => {
-    const [mode, setMode] = React.useState('dark');
+    const storageColorMode = localStorage.getItem("colorMode");
+    const [mode, setMode] = React.useState(storageColorMode ? storageColorMode : 'dark');
     const [currency, setCurrency] = React.useState('usd');
-
+    
     const colorMode = React.useMemo(
         () => ({
             toggleColorMode: () => {
-                setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+                setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'))
             },
-        }),
-        [],
+        }), []
     );
 
+    localStorage.setItem("colorMode", mode);
+        
     const handleCurrency = (currency) => {
         setCurrency(currency);
     }
@@ -35,7 +37,7 @@ const ColorModeContext = ({ children }) => {
                     divider: indigo[500],
                     background: {
                         default: grey[100],
-                        paper: grey[100],
+                        paper: grey[300],
                     },
                     text: {
                         primary: grey[900],
@@ -48,7 +50,7 @@ const ColorModeContext = ({ children }) => {
                     divider: cyan[500],
                     background: {
                         default: grey[900],
-                        paper: grey[600],
+                        paper: grey[800],
                     },
                     text: {
                         primary: '#fff',

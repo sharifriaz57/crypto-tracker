@@ -34,7 +34,7 @@ const BannerCarousel = () => {
         
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <span style={{ marginRight: '0.5rem' }}>
-            <Typography variant="subtitle1" sx={{ color: '#fff' }}>
+            <Typography variant="subtitle1" sx={{ color: 'text.secondary' }}>
               {item.symbol.toUpperCase()}
             </Typography>
           </span>
@@ -50,14 +50,14 @@ const BannerCarousel = () => {
           </span>
         </div>
         <div style={{ display: 'flex' }}>
-          <Typography variant="h5" sx={{ marginRight: '0.25rem', color: '#fff' }}>
+          <Typography variant="h5" sx={{ marginRight: '0.25rem', color: 'text.primary' }}>
             {
               typeof getSymbolFromCurrency(currency) === 'undefined'
                 ? currency.toUpperCase()
                 : getSymbolFromCurrency(currency)
             }
           </Typography>
-          <Typography variant="h5" sx={{ fontWeight: 700, color: '#fff' }}>
+          <Typography variant="h5" sx={{ fontWeight: 700, color: 'text.primary' }}>
             {numberWithCommas(item.current_price.toFixed(2))}
           </Typography>
         </div>

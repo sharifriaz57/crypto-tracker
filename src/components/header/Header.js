@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1, position: 'relative', zIndex: '5' }}>
         <AppBar position="static"
           sx={{
             bgcolor: 'background.default'

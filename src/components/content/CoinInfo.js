@@ -71,7 +71,7 @@ const CoinInfo = (props) => {
 					</Typography>
 				</div>
 
-				<Divider sx={{ borderColor: 'text.secondary' }} />
+				<Divider sx={{ borderColor: 'background.paper' }} />
 
 				<div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0' }}>
 					<Typography variant="body2" color='text.secondary'>
@@ -93,7 +93,7 @@ const CoinInfo = (props) => {
 					</div>
 				</div>
 
-				<Divider sx={{ borderColor: 'text.secondary' }} />
+				<Divider sx={{ borderColor: 'background.paper' }} />
 
 				<div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0' }}>
 					<Typography variant="body2" color='text.secondary'>
@@ -115,7 +115,7 @@ const CoinInfo = (props) => {
 					</div>
 				</div>
 
-				<Divider sx={{ borderColor: 'text.secondary' }} />
+				<Divider sx={{ borderColor: 'background.paper' }} />
 
 				<div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0' }}>
 					<Typography variant="body2" color='text.secondary'>
@@ -142,7 +142,7 @@ const CoinInfo = (props) => {
 					</div>
 				</div>
 
-				<Divider sx={{ borderColor: 'text.secondary' }} />
+				<Divider sx={{ borderColor: 'background.paper' }} />
 
 				<div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0' }}>
 					<Typography variant="body2" color='text.secondary'>

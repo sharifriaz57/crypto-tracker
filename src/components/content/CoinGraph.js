@@ -30,7 +30,6 @@ const CoinGraph = ({ id, price_change_percentage_24h }) => {
     const { mode } = ColorContext();
     // const isPriceIncreasing = price_change_percentage_24h > 0;
     
-    console.count("CoinGraph");
     React.useEffect(() => {
         if (typeof id !== 'undefined') {
             getCoinChart()

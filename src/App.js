@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import SingleCoin from './pages/SingleCoin';
 
 function App() {
+  console.log('App comp');
 
   return (
     <>
@@ -16,7 +17,7 @@ function App() {
           color: 'text.primary',
         }}
       >
-        <Header />
+      <Header />
 
         <Routes>
           <Route path="/" element={<Home />} />
