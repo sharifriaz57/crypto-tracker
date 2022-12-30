@@ -7,7 +7,6 @@ import Home from './pages/Home';
 import SingleCoin from './pages/SingleCoin';
 
 function App() {
-  console.log('App comp');
 
   return (
     <>

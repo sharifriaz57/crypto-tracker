@@ -30,7 +30,7 @@ const BannerCarousel = () => {
 
     return (
       <Link to={`/coin/${item.id}`} key={item.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} >
-        <img src={item?.image} alt={item.id} style={{ maxWidth: '75px', height: '75px', objectFit: 'contain', marginBottom: '0.5rem' }} />
+        <img src={item?.image} alt={item.id} style={{ maxWidth: '5rem', height: '5rem', objectFit: 'contain', marginBottom: '0.5rem' }} />
         
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <span style={{ marginRight: '0.5rem' }}>
@@ -67,7 +67,7 @@ const BannerCarousel = () => {
 
   const responsive = {
     0: {
-      items: 2,
+      items: 3,
     },
     600: {
       items: 4

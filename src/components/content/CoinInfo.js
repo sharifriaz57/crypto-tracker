@@ -5,6 +5,10 @@ import { CurrencyContext } from '../../context/ColorModeContext';
 import { numberWithCommas } from '../banner/BannerCarousel';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
+import Avatar from '@mui/material/Avatar';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
+import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import parse from 'html-react-parser';
 
 const CoinInfo = (props) => {
@@ -61,14 +65,17 @@ const CoinInfo = (props) => {
 			</Typography>
 
 			<div style={{ marginTop: '1.5rem' }}>
-				<div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0' }}>
+				<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.5rem 0' }}>
 					<Typography variant="body2" color='text.secondary'>
 						Rank
 					</Typography>
 
-					<Typography variant="body2" color='text.primary' sx={{ fontWeight: '600' }}>
-						# {market_data?.market_cap_rank}
-					</Typography>
+					<Stack direction="row">
+						{ market_data 
+							? <Chip size="small" sx={{ fontSize: '0.9rem', fontWeight: '700' }} color="primary" icon={<StarBorderOutlinedIcon />} label={market_data.market_cap_rank} />
+							: ""
+						}
+					</Stack>
 				</div>
 
 				<Divider sx={{ borderColor: 'background.paper' }} />

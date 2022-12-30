@@ -147,6 +147,7 @@ const SingleCoinInfo = (props) => {
               size='small'
               onChange={handleDataParams}
               color='primary'
+              sx={{ flexWrap: 'wrap' }}
             >
               <ToggleButton value="prices" sx={{ padding: '0.25rem 1rem', borderColor: 'text.secondary' }}>
                 Price
@@ -162,6 +163,7 @@ const SingleCoinInfo = (props) => {
               size='small'
               onChange={handleDataParams}
               color='primary'
+              sx={{ flexWrap: 'wrap' }}
             >
               <ToggleButton value={1} sx={{ padding: '0.25rem 1rem', borderColor: 'text.secondary' }}>
                 24h

@@ -1,4 +1,4 @@
-import { createTheme, ThemeProvider } from '@mui/material';
+import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material';
 import { grey, indigo, cyan } from '@mui/material/colors';
 import React from 'react';
 
@@ -26,7 +26,7 @@ const ColorModeContext = ({ children }) => {
 
     const getDesignTokens = (mode) => ({
         typography: {
-            fontFamily: 'Open Sans, sans-serif'
+            fontFamily: 'Open Sans, sans-serif',
         },
         palette: {
             mode,
@@ -57,14 +57,15 @@ const ColorModeContext = ({ children }) => {
                         secondary: grey[500],
                     },
                 }),
-        },
+        }
     });
 
-    const theme = React.useMemo(
+    let theme = React.useMemo(
         () =>
             createTheme(getDesignTokens(mode)),
         [mode],
     );
+    theme = responsiveFontSizes(theme);
 
     return (
         <ColorModeContextAPI.Provider value={{ colorMode, mode }}>

@@ -28,6 +28,15 @@ const Header = () => {
     getCoinList()
   }, [])
 
+  const styles = {
+    currencySelect: {
+      minWidth: 150,
+      '@media (max-width:640px)': {
+        minWidth: 115,
+      }
+    }
+  }
+
   return (
     <>
       <Box sx={{ flexGrow: 1, position: 'relative', zIndex: '5' }}>
@@ -52,7 +61,7 @@ const Header = () => {
                   onChange={(event, newValue) => {
                     newValue === null ? handleCurrency('usd') : handleCurrency(newValue)
                   }}
-                  sx={{ minWidth: 150 }}
+                  sx={{ ...styles.currencySelect }}
                   options={allCurrency}
                   autoHighlight
                   getOptionLabel={(option) => option.toUpperCase()}

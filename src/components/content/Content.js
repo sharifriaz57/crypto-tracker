@@ -73,12 +73,12 @@ const Content = () => {
                 <Table size='small'>
                   <TableHead sx={{ 'td, th': { borderColor: 'background.paper' } }}>
                     <TableRow sx={{ color: 'text.primary' }}>
-                      <TableCell sx={{ fontWeight: '600', color: 'text.secondary', width: '25px' }}>#</TableCell>
+                      <TableCell sx={{ fontWeight: '600', color: 'text.secondary', minWidth: '25px' }}>#</TableCell>
                       <TableCell sx={{ fontWeight: '600', color: 'text.secondary' }}>Currency</TableCell>
                       <TableCell align="right" sx={{ fontWeight: '600', color: 'text.secondary' }}>Price</TableCell>
                       <TableCell align="right" sx={{ fontWeight: '600', color: 'text.secondary', whiteSpace: 'nowrap' }}>24h Change %</TableCell>
                       <TableCell align="right" sx={{ fontWeight: '600', color: 'text.secondary' }}>Total Volume</TableCell>
-                      <TableCell align="right" sx={{ fontWeight: '600', color: 'text.secondary' }}>Market Cap</TableCell>
+                      <TableCell align="right" sx={{ fontWeight: '600', color: 'text.secondary', minWidth: '80px' }}>Market Cap</TableCell>
                       <TableCell align="right" sx={{ fontWeight: '600', color: 'text.secondary' }}>Last 7 days</TableCell>
                     </TableRow>
                   </TableHead>
