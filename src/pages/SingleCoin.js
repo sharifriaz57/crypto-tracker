@@ -10,16 +10,16 @@ const SingleCoin = () => {
   const [coinInfo, setCoinInfo] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
 
-  const getCoinsByMarketCap = async () => {
+  const getCoinsByMarketCap = React.useCallback(async () => {
     setLoading(true)
     const { data } = await axios.get(SingleCoinAPI(id));
     setCoinInfo(data);
     setLoading(false);
-  }
+  }, [id])
 
   React.useEffect(() => {
     getCoinsByMarketCap();
-  }, [id])
+  }, [getCoinsByMarketCap, id])
 
   return (
     <>
