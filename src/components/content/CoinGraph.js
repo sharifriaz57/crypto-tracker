@@ -30,16 +30,16 @@ const CoinGraph = ({ id, price_change_percentage_24h }) => {
     const { mode } = ColorContext();
     // const isPriceIncreasing = price_change_percentage_24h > 0;
     
+    const getCoinChart = React.useCallback(async () => {
+        const {data} = await axios.get(chartDataAPI(id, currency, 7));
+        setGraph(data.prices);        
+    }, [id, currency])
+    
     React.useEffect(() => {
         if (typeof id !== 'undefined') {
             getCoinChart()
         }
-    }, [id])
-    
-    const getCoinChart = async () => {
-        const {data} = await axios.get(chartDataAPI(id, currency, 7));
-        setGraph(data.prices);        
-    }
+    }, [getCoinChart, id])
     
     const labels = [];
     const price = [];
@@ -47,6 +47,7 @@ const CoinGraph = ({ id, price_change_percentage_24h }) => {
     graph.length > 0 && graph.map(p => {
         labels.push(p[0]);
         price.push(p[1]);
+        return true;
     })
 
     const options = {

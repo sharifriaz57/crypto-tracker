@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Grid from '@mui/material/Unstable_Grid2';
-import { CircularProgress, ToggleButton, ToggleButtonGroup, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { CircularProgress, ToggleButton, ToggleButtonGroup, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { ColorContext, CurrencyContext } from '../../context/ColorModeContext';
 import Container from '@mui/material/Container';
 import { Line } from 'react-chartjs-2';
@@ -44,18 +44,18 @@ const SingleCoinInfo = (props) => {
     setDataParams(prev => number ? {...prev, day: param} : {...prev, option: param})
   };
   
-  const getChartData = async () => {
+  const getChartData = React.useCallback(async () => {
     setLoading(true)
     if (id && currency) {
       const { data } = await axios.get(chartDataAPI(id, currency, dataParams.day));
       setChartData(data);
     }
     setLoading(false);
-  }
+  }, [id, currency, dataParams])
   
   React.useEffect(() => {
     getChartData();
-  }, [id, currency, dataParams])
+  }, [getChartData, id, currency, dataParams])
   
   const options = {
     elements: {

@@ -5,7 +5,6 @@ import { CurrencyContext } from '../../context/ColorModeContext';
 import { numberWithCommas } from '../banner/BannerCarousel';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
-import Avatar from '@mui/material/Avatar';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
@@ -168,4 +167,4 @@ const CoinInfo = (props) => {
 	)
 }
 
-export default CoinInfo
+export default React.memo(CoinInfo)

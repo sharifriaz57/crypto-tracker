@@ -23,16 +23,16 @@ const Content = () => {
   const { currency } = CurrencyContext();
   const navigate = useNavigate();
 
-  const getCoinsByMarketCap = async () => {
+  const getCoinsByMarketCap = React.useCallback(async () => {
     setLoading(true)
     const { data } = await axios.get(CoinsByMarketCapAPI(currency));
     setCoins(data);
     setLoading(false);
-  }
+  }, [currency])
 
   React.useEffect(() => {
       getCoinsByMarketCap();
-  }, [currency])
+  }, [getCoinsByMarketCap, currency])
 
   const handleSearch = React.useCallback(() => {
     return coins.filter(coin =>

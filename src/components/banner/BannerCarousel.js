@@ -16,14 +16,14 @@ const BannerCarousel = () => {
   const [trendingCoins, setTrendingCoins] = React.useState([]);
   const { currency } = CurrencyContext();
 
-  const getCoinList = async () => {
+  const getCoinList = React.useCallback(async () => {
     const { data } = await axios.get(trendingCoinsAPI(currency));
     setTrendingCoins(data);
-  }
+  }, [currency])
 
   React.useEffect(() => {
     getCoinList()
-  }, [currency])
+  }, [getCoinList, currency])
 
   const items = trendingCoins.map(item => {
     const coinPriceGain = item.price_change_percentage_24h > 0;
