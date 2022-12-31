@@ -7,7 +7,7 @@ export const CurrentCurrencyContextAPI = React.createContext();
 
 const ColorModeContext = ({ children }) => {
     const storageColorMode = localStorage.getItem("colorMode");
-    const [mode, setMode] = React.useState(storageColorMode ? storageColorMode : 'dark');
+    const [mode, setMode] = React.useState(storageColorMode ? storageColorMode : 'light');
     const [currency, setCurrency] = React.useState('usd');
     
     const colorMode = React.useMemo(
