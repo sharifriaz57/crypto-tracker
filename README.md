@@ -1,6 +1,6 @@
 ## Crypto-Tracker using React JS, Material UI and Chart JS
 
-![alt text](https://github.com/sharifriaz57/crypto-tracker/blob/main/public/screenshot.png?raw=true)
+![alt text](https://github.com/sharifriaz57/crypto-tracker/blob/main/public/crypto-tracker-bg.png?raw=true)
 
 ## Demo Link
 Live demo link - <a name="tag">https://new-crypto-tracker.netlify.app</a>
